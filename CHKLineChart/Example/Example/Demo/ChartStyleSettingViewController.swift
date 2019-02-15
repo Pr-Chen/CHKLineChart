@@ -227,8 +227,8 @@ extension ChartStyleSettingViewController {
             self.styleParam.textColor = 0xcccccc
             self.styleParam.selectedTextColor = 0xcccccc
             self.styleParam.lineColor = 0x333333
-            upcolor = 0x00bd9a
-            downcolor = 0xff6960
+            upcolor = 0x18A841
+            downcolor = 0xED4040
             lineColors = [
                 0xDDDDDD,
                 0xF9EE30,

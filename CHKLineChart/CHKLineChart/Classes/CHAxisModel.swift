@@ -39,6 +39,13 @@ public enum CHAxisReferenceStyle {
  */
 public struct CHYAxis {
     
+    // 分时图的Y轴应该是有:
+    // 1. 0为中轴, Y轴最大最小值固定为可能的最大最小值
+    // 2. 0为中轴, 出现的最大值为上下Y轴的最大最小值
+    // 3. 出现的最小最大值为Y轴的最小最大值
+    
+    // K线图的Y坐标轴至少得有3种: 1.普通坐标 2.对数坐标 3.百分比坐标(适用于叠加品种的时候用,叠加的时候可以设置上下偏移量,不一定要起点一样)
+    
     public var max: CGFloat = 0                //Y轴的最大值
     public var min: CGFloat = 0                //Y轴的最小值
     public var ext: CGFloat = 0.00             //上下边界溢出值的比例

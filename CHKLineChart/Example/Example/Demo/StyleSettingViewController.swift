@@ -113,11 +113,11 @@ extension StyleSettingViewController {
         var downcolor: (color: UIColor, isSolid: Bool)
         
         if selectedCandleColor == 0 {
-            upcolor = (UIColor.ch_hex(0xF80D1F), true)
-            downcolor = (UIColor.ch_hex(0x1E932B), true)
+            upcolor = (UIColor.ch_hex(0xed4040), true)
+            downcolor = (UIColor.ch_hex(0x18a841), true)
         } else {
-            upcolor = (UIColor.ch_hex(0x1E932B), true)
-            downcolor = (UIColor.ch_hex(0xF80D1F), true)
+            upcolor = (UIColor.ch_hex(0x18a841), true)
+            downcolor = (UIColor.ch_hex(0xed4040), true)
         }
         
         

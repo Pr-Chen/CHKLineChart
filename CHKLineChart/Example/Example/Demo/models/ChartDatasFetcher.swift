@@ -96,5 +96,21 @@ class ChartDatasFetcher: NSObject {
         task.resume()
     }
     
+    func getLocalChartData(code: String, callback:@escaping ([KlineChartData]) -> Void) {
+        let path = Bundle.main.path(forResource: code, ofType: "json")
+        let string = try! String(contentsOfFile: path!)
+        
+        let json = JSON(parseJSON: string)
+        
+        var marketDatas = [KlineChartData]()
+        let jsonDatas = json["data"].arrayValue
+        for data in jsonDatas {
+            let list = data.stringValue.components(separatedBy: ",")
+            let json = JSON(list)
+            let marektdata = KlineChartData(json: json.arrayValue)
+            marketDatas.append(marektdata)
+        }
+        callback(marketDatas)
+    }
     
 }

@@ -25,9 +25,9 @@ class StyleParam: NSObject, Codable {
     
     var lineColor: UInt = 0x333333
     
-    var upColor: UInt = 0x00bd9a
+    var upColor: UInt = 0x18a841
 
-    var downColor: UInt = 0xff6960
+    var downColor: UInt = 0xed4040
 
     var lineColors: [UInt] = [
         0xDDDDDD,
@@ -47,8 +47,8 @@ class StyleParam: NSObject, Codable {
         style.textColor = 0xcccccc
         style.selectedTextColor = 0xcccccc
         style.lineColor = 0x333333
-        style.upColor = 0x00bd9a
-        style.downColor = 0xff6960
+        style.upColor = 0x18a841
+        style.downColor = 0xed4040
         style.lineColors = [
             0xDDDDDD,
             0xF9EE30,
@@ -162,9 +162,9 @@ public extension CHKLineChartStyle {
         
         //分区点线样式
         //表示上涨的颜色
-        let upcolor = (UIColor.ch_hex(0x5BA267), true)
+        let upcolor = (UIColor.ch_hex(0x18a841), true)
         //表示下跌的颜色
-        let downcolor = (UIColor.ch_hex(0xB1414C), true)
+        let downcolor = (UIColor.ch_hex(0xed4040), true)
         let priceSection = CHSection()
         priceSection.backgroundColor = style.backgroundColor
         //分区上显示选中点的数据文字是否在分区外显示
@@ -342,9 +342,9 @@ public extension CHKLineChartStyle {
         
         //分区点线样式
         //表示上涨的颜色
-        let upcolor = (UIColor.ch_hex(0x5BA267), true)
+        let upcolor = (UIColor.ch_hex(0x18a841), true)
         //表示下跌的颜色
-        let downcolor = (UIColor.ch_hex(0xB1414C), true)
+        let downcolor = (UIColor.ch_hex(0xed4040), true)
         let priceSection = CHSection()
         priceSection.backgroundColor = style.backgroundColor
         //分区上显示选中点的数据文字是否在分区外显示

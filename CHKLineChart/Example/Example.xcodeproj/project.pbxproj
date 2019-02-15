@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7443CF7E22103CEA0058C69C /* CHKLineChartKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7443CF7D22103CEA0058C69C /* CHKLineChartKit.framework */; };
-		7443CF7F22103CEA0058C69C /* CHKLineChartKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7443CF7D22103CEA0058C69C /* CHKLineChartKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C53B14602048193600289E85 /* SettingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B145F2048193600289E85 /* SettingDetailViewController.swift */; };
 		C56EE2842048E5DE004CFC65 /* SeriesSettingDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56EE2832048E5DE004CFC65 /* SeriesSettingDetailCell.swift */; };
 		C58173E62047DAF400598AE2 /* SettingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58173E52047DAF400598AE2 /* SettingListViewController.swift */; };
@@ -44,6 +42,10 @@
 		C5DAC46C20455C0200D16B84 /* Int+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DAC46720455C0200D16B84 /* Int+extension.swift */; };
 		C5DAC46E2045791E00D16B84 /* SelectionPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DAC46D2045791E00D16B84 /* SelectionPopView.swift */; };
 		C5DC618D204E902700241CD8 /* ChartStyleSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DC618C204E902700241CD8 /* ChartStyleSettingViewController.swift */; };
+		D61A659A22115C8D00D6BCD7 /* CHKLineChartKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7443CF7D22103CEA0058C69C /* CHKLineChartKit.framework */; };
+		D61A659B22115C8D00D6BCD7 /* CHKLineChartKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7443CF7D22103CEA0058C69C /* CHKLineChartKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D681A6FF22158500008EA08D /* 000862.json in Resources */ = {isa = PBXBuildFile; fileRef = D681A6FE22158500008EA08D /* 000862.json */; };
+		D6E26CEF2212CCC90068DAED /* 300059.json in Resources */ = {isa = PBXBuildFile; fileRef = D6E26CEE2212CCC80068DAED /* 300059.json */; };
 		EAC91950E4ADF8C3243794DC /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2638DFE8B9DCAD20AACBB229 /* Pods_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,13 +60,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7443CF7C22103CC80058C69C /* Embed Frameworks */ = {
+		D61A659C22115C8D00D6BCD7 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7443CF7F22103CEA0058C69C /* CHKLineChartKit.framework in Embed Frameworks */,
+				D61A659B22115C8D00D6BCD7 /* CHKLineChartKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +119,8 @@
 		C5DAC46720455C0200D16B84 /* Int+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+extension.swift"; sourceTree = "<group>"; };
 		C5DAC46D2045791E00D16B84 /* SelectionPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionPopView.swift; sourceTree = "<group>"; };
 		C5DC618C204E902700241CD8 /* ChartStyleSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartStyleSettingViewController.swift; sourceTree = "<group>"; };
+		D681A6FE22158500008EA08D /* 000862.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 000862.json; sourceTree = "<group>"; };
+		D6E26CEE2212CCC80068DAED /* 300059.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = 300059.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,7 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAC91950E4ADF8C3243794DC /* Pods_Example.framework in Frameworks */,
-				7443CF7E22103CEA0058C69C /* CHKLineChartKit.framework in Frameworks */,
+				D61A659A22115C8D00D6BCD7 /* CHKLineChartKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +181,8 @@
 				C5DAC4122044F25500D16B84 /* AppDelegate.swift */,
 				C5DAC4162044F25500D16B84 /* Main.storyboard */,
 				C5DAC4192044F25500D16B84 /* Assets.xcassets */,
+				D681A6FE22158500008EA08D /* 000862.json */,
+				D6E26CEE2212CCC80068DAED /* 300059.json */,
 				C5DAC41B2044F25500D16B84 /* LaunchScreen.storyboard */,
 				C5DAC41E2044F25500D16B84 /* Info.plist */,
 				C55110A720464BDC00B0BC91 /* Example_bridging_Header.h */,
@@ -290,7 +296,8 @@
 				C5DAC40C2044F25500D16B84 /* Frameworks */,
 				C5DAC40D2044F25500D16B84 /* Resources */,
 				ABE71615878980D4C63F2A39 /* [CP] Embed Pods Frameworks */,
-				7443CF7C22103CC80058C69C /* Embed Frameworks */,
+				3EB63259D0F646E52614820E /* [CP] Copy Pods Resources */,
+				D61A659C22115C8D00D6BCD7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,7 +372,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5DAC41D2044F25500D16B84 /* LaunchScreen.storyboard in Resources */,
+				D681A6FF22158500008EA08D /* 000862.json in Resources */,
 				C5DAC41A2044F25500D16B84 /* Assets.xcassets in Resources */,
+				D6E26CEF2212CCC90068DAED /* 300059.json in Resources */,
 				C5DAC4182044F25500D16B84 /* Main.storyboard in Resources */,
 				C5DAC4512044F74F00D16B84 /* depth.json in Resources */,
 				C5DAC4502044F74F00D16B84 /* data.json in Resources */,
@@ -398,6 +407,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EB63259D0F646E52614820E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		ABE71615878980D4C63F2A39 /* [CP] Embed Pods Frameworks */ = {
@@ -618,10 +642,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6QEB559EPD;
+				DEVELOPMENT_TEAM = W8LAK68552;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kai.kline;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kai.kline3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Example/Example_bridging_Header.h;
 				SWIFT_VERSION = 4.0;
@@ -635,10 +659,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6QEB559EPD;
+				DEVELOPMENT_TEAM = W8LAK68552;
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kai.kline;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kai.kline3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = Example/Example_bridging_Header.h;
 				SWIFT_VERSION = 4.0;

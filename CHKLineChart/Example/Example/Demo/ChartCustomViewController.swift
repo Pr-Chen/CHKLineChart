@@ -215,6 +215,20 @@ extension ChartCustomViewController {
     func fetchChartDatas() {
         self.loadingView.startAnimating()
         self.loadingView.isHidden = false
+        
+        ChartDatasFetcher.shared.getLocalChartData(code: "300059") {[weak self](chartsData) in
+            print("数据长度:", chartsData.count)
+            self?.klineDatas = chartsData
+            self?.chartView.reloadData()
+            
+            //显示最后一条数据
+            self?.topView.update(data: chartsData.last!)
+            
+            self?.loadingView.stopAnimating()
+            self?.loadingView.isHidden = true
+        }
+        
+        /*
         let symbol = self.exPairs[self.selectedSymbol]
         ChartDatasFetcher.shared.getRemoteChartData(
             symbol: symbol,
@@ -232,6 +246,7 @@ extension ChartCustomViewController {
                     self?.loadingView.isHidden = true
                 }
         }
+         */
     }
     
     /// 配置UI
@@ -575,7 +590,7 @@ extension ChartCustomViewController {
         /************** 配置分区样式 **************/
         
         /// 主图
-        let upcolor = (UIColor.ch_hex(styleParam.upColor), true)
+        let upcolor = (UIColor.ch_hex(styleParam.upColor), false)
         let downcolor = (UIColor.ch_hex(styleParam.downColor), true)
         let priceSection = CHSection()
         priceSection.backgroundColor = style.backgroundColor
