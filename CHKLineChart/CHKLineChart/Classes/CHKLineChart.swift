@@ -158,8 +158,8 @@ open class CHKLineChartView: UIView {
     let kMinRange = 13       //最小缩放范围
     let kMaxRange = 133     //最大缩放范围
     let kPerInterval = 4    //缩放的每段间隔
-    open let kYAxisLabelWidth: CGFloat = 46        //默认宽度
-    open let kXAxisHegiht: CGFloat = 16        //默认X坐标的高度
+    public let kYAxisLabelWidth: CGFloat = 46        //默认宽度
+    public let kXAxisHegiht: CGFloat = 16        //默认X坐标的高度
     
     /// MARK: - 成员变量
     @IBInspectable open var upColor: UIColor = UIColor.green     //升的颜色
@@ -1636,12 +1636,12 @@ extension CHKLineChartView: UIGestureRecognizerDelegate {
         case .changed:
             
             //计算移动距离的绝对值，距离满足超过线条宽度就进行图表平移刷新
-            let distance = fabs(translation.x)
+            let distance = abs(translation.x)
 //            print("translation.x = \(translation.x)")
 //            print("distance = \(distance)")
             if distance > plotWidth {
                 let isRight = translation.x > 0 ? true : false
-                let interval = lroundf(fabs(Float(distance / plotWidth)))
+                let interval = lroundf(abs(Float(distance / plotWidth)))
                 self.moveChart(by: interval, direction: isRight)
                 //重新计算起始位
                 sender.setTranslation(CGPoint(x: 0, y: 0), in: self)
@@ -1668,11 +1668,11 @@ extension CHKLineChartView: UIGestureRecognizerDelegate {
                 let itemX = self?.dynamicItem.center.x ?? 0
                 let startX = self?.decelerationStartX ?? 0
                 //计算移动距离的绝对值，距离满足超过线条宽度就进行图表平移刷新
-                let distance = fabs(itemX - startX)
+                let distance = abs(itemX - startX)
                 //            print("distance = \(distance)")
                 if distance > plotWidth {
                     let isRight = itemX > 0 ? true : false
-                    let interval = lroundf(fabs(Float(distance / plotWidth)))
+                    let interval = lroundf(abs(Float(distance / plotWidth)))
                     self?.moveChart(by: interval, direction: isRight)
                     //重新计算起始位
                     self?.decelerationStartX = itemX

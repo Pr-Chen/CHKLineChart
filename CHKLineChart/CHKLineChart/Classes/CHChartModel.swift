@@ -275,14 +275,15 @@ open class CHCandleModel: CHChartModel {
             let iyh = self.section.getLocalY(item.highPrice)
             let iyl = self.section.getLocalY(item.lowPrice)
             
-            if iyh > iyc || iyh > iyo {
-                NSLog("highPrice = \(item.highPrice), closePrice = \(item.closePrice), openPrice = \(item.openPrice)")
-            }
-            
             switch item.trend {
             case .equal:
-                //开盘收盘一样，则显示横线
-                shadowLayer.strokeColor = self.upStyle.color.cgColor
+                if i > 0 {
+                    let lastClose = self[i - 1].closePrice
+                    let color = item.closePrice < lastClose ? self.downStyle.color : self.upStyle.color
+                    shadowLayer.strokeColor = color.cgColor
+                } else {
+                    shadowLayer.strokeColor = self.upStyle.color.cgColor
+                }
                 isSolid = true
             case .up:
                 //收盘价比开盘高，则显示涨的颜色
@@ -298,14 +299,47 @@ open class CHCandleModel: CHChartModel {
                 isSolid = self.downStyle.isSolid
             }
             
-            //1.先画最高和最低价格的线
+            
+//            shadowPath.move(to: CGPoint(x: ix + plotWidth / 2, y: iyh))
+//            shadowPath.addLine(to: CGPoint(x: ix + plotWidth / 2, y: item.trend == .up ? iyc : iyo))
+//
+//            shadowPath.move(to: CGPoint(x: ix + plotWidth / 2, y: item.trend == .up ? iyo : iyc))
+//            shadowPath.addLine(to: CGPoint(x: ix + plotWidth / 2, y: iyl))
+            
+            //1.先画影线(可以在实心的k线时直接画最高点到最低点一条线,提高性能)
             if self.drawShadow {
-                shadowPath.move(to: CGPoint(x: ix + plotWidth / 2, y: iyh))
-                shadowPath.addLine(to: CGPoint(x: ix + plotWidth / 2, y: iyl))
+                switch item.trend {
+                case .equal:
+                    shadowPath.move(to: CGPoint(x: ix + plotWidth / 2, y: iyh))
+                    shadowPath.addLine(to: CGPoint(x: ix + plotWidth / 2, y: iyl))
+                    
+                case .up:
+                    // 有上影线
+                    if iyh < iyc {
+                        shadowPath.move(to: CGPoint(x: ix + plotWidth / 2, y: iyh))
+                        shadowPath.addLine(to: CGPoint(x: ix + plotWidth / 2, y: iyc))
+                    }
+                    // 有下影线
+                    if iyl > iyo {
+                        shadowPath.move(to: CGPoint(x: ix + plotWidth / 2, y: iyo))
+                        shadowPath.addLine(to: CGPoint(x: ix + plotWidth / 2, y: iyl))
+                    }
+                    
+                case .down:
+                    // 有上影线
+                    if iyh < iyo {
+                        shadowPath.move(to: CGPoint(x: ix + plotWidth / 2, y: iyh))
+                        shadowPath.addLine(to: CGPoint(x: ix + plotWidth / 2, y: iyo))
+                    }
+                    // 有下影线
+                    if iyl > iyc {
+                        shadowPath.move(to: CGPoint(x: ix + plotWidth / 2, y: iyc))
+                        shadowPath.addLine(to: CGPoint(x: ix + plotWidth / 2, y: iyl))
+                    }
+                }
             }
             
-            
-            
+
             //2.画蜡烛柱的矩形，空心的刚好覆盖上面的线
             switch item.trend {
             case .equal:
@@ -319,8 +353,6 @@ open class CHCandleModel: CHChartModel {
             case .down:
                 //收盘价比开盘低，则从开盘的Y值向下画矩形
                 candlePath = UIBezierPath(rect: CGRect(x: ix + plotPadding, y: iyo, width: plotWidth - 2 *  plotPadding, height: iyc - iyo))
-                
-                
             }
             
             shadowLayer.path = shadowPath.cgPath
