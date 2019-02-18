@@ -1723,6 +1723,8 @@ extension CHKLineChartView: UIGestureRecognizerDelegate {
     /// - Parameter sender: 手势
     @objc func doPinchAction(_ sender: UIPinchGestureRecognizer) {
         
+        // 当在最左边或者最右边时,以中心为放大不好,应该以第一个或者最后一个数据为基点
+        
         guard self.enablePinch else {
             return
         }

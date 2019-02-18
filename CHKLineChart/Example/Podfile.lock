@@ -10,6 +10,13 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SwiftyJSON
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MZAppearance
+    - MZFormSheetPresentationController
+    - SnapKit
+    - SwiftyJSON
+
 SPEC CHECKSUMS:
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   MZFormSheetPresentationController: fbfdbad31884f16fac17fbe3c44c168306cc1095
@@ -18,4 +25,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 37feee6bf5d736bf5909998dc837df6d19635152
 
-COCOAPODS: 1.4.0.beta.1
+COCOAPODS: 1.5.3

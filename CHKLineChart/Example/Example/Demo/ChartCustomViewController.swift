@@ -216,7 +216,7 @@ extension ChartCustomViewController {
         self.loadingView.startAnimating()
         self.loadingView.isHidden = false
         
-        ChartDatasFetcher.shared.getLocalChartData(code: "300059") {[weak self](chartsData) in
+        ChartDatasFetcher.shared.getLocalChartData(code: "000862") {[weak self](chartsData) in
             print("数据长度:", chartsData.count)
             self?.klineDatas = chartsData
             self?.chartView.reloadData()

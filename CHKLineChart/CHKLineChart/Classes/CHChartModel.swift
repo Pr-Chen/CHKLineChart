@@ -456,7 +456,16 @@ open class CHColumnModel: CHChartModel {
             
             //收盘价比开盘低，则显示跌的颜色
             switch item.trend {
-            case .up, .equal:
+            case .equal:
+                var color = self.upStyle.color
+                if i > 0 {
+                    let lastClose = self[i - 1].closePrice
+                    color = item.closePrice < lastClose ? self.downStyle.color : self.upStyle.color
+                }
+                columnLayer.strokeColor = color.cgColor
+                columnLayer.fillColor = color.cgColor
+                isSolid = self.upStyle.isSolid
+            case .up:
                 //收盘价比开盘高，则显示涨的颜色
                 columnLayer.strokeColor = self.upStyle.color.cgColor
                 columnLayer.fillColor = self.upStyle.color.cgColor
